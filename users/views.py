@@ -16,14 +16,13 @@ class RegisterAPI(generics.GenericAPIView):
         user = serializer.save()
         return Response({
         "status": 0,
-        "user": UserSerializer(user, context=self.get_serializer_context()).data,
         "token": AuthToken.objects.create(user)[1]
         })
 
 
 class LoginAPI(KnoxLoginView):
     permission_classes = (permissions.AllowAny,)
-
+    
     def post(self, request, format=None):
         serializer = AuthTokenSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
