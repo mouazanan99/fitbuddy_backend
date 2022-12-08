@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-a^eg@2!ec#w%*3j6!&i_9hzrfc95*e-&$ztvw5iw)(s%jw0qhs
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '10.0.2.2', 'localhost'
+    '10.0.2.2', 'localhost', '127.0.0.1'
 ]
 
 
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     'users',
     'workout_plan',
+    'text_recognition',
 
     'rest_framework',
     'rest_framework.authtoken',
